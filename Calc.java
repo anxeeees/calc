@@ -237,16 +237,34 @@ import javax.swing.JList;
                 }
             }
             if (e.getSource() == memoryClear) {
-                memory = 0;
                 textField.setText("");
+                memoryListModel.clear();
+
             }
 
             if (e.getSource() == memoryPlus) {
                 double currentValue = Double.parseDouble(textField.getText());
                 memory += currentValue;
+                textField.setText("");
                 memoryListModel.addElement(memory);
 
             }
+            if (e.getSource() == memoryMinus) {
+                double currentValue = Double.parseDouble(textField.getText());
+                memory -= currentValue;
+                textField.setText("");
+                memoryListModel.addElement(memory);
+
+            }
+
+            if (e.getSource() == memorySave) {
+                double currentValue = Double.parseDouble(textField.getText());
+                memory = currentValue;
+                textField.setText("");
+                memoryListModel.addElement(memory);
+
+            }
+
 
         }
 
