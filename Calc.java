@@ -244,9 +244,18 @@ import javax.swing.JList;
             if (e.getSource() == memoryPlus) {
                 double currentValue = Double.parseDouble(textField.getText());
                 memory += currentValue;
+                textField.setText("");
                 memoryListModel.addElement(memory);
-
             }
+
+            if (e.getSource() == memoryMinus) {
+                double currentValue = Double.parseDouble(textField.getText());
+                memory -= currentValue;
+                textField.setText("");
+                memoryListModel.addElement(memory);
+            }
+
+
 
         }
 
