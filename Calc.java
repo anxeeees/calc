@@ -32,8 +32,6 @@ import javax.swing.JList;
 
         double memory;
 
-        DefaultListModel<Double> memoryListModel = new DefaultListModel<>();
-        JList<Double> memoryList = new JList<>(memoryListModel);
 
         Font font = new Font("Calibri", Font.BOLD, 18);
 
@@ -108,7 +106,7 @@ import javax.swing.JList;
             memoryPanel.add(memoryButtons[2]);
             memoryPanel.add(memoryButtons[3]);
             memoryPanel.add(memoryField);
-            //memoryPanel.add(memoryList);
+
 
 
 
@@ -245,8 +243,6 @@ import javax.swing.JList;
             if (e.getSource() == memoryClear) {
                 textField.setText("");
                 memoryField.setText("");
-                memoryListModel.clear();
-
             }
 
             if (e.getSource() == memoryPlus) {
@@ -254,7 +250,6 @@ import javax.swing.JList;
                 memory += currentValue;
                 textField.setText("");
                 memoryField.setText(String.valueOf(memory)); //set text
-                memoryListModel.addElement(memory);
 
             }
             if (e.getSource() == memoryMinus) {
@@ -262,7 +257,7 @@ import javax.swing.JList;
                 memory -= currentValue;
                 textField.setText("");
                 memoryField.setText(String.valueOf(memory)); //set text
-                memoryListModel.addElement(memory);
+
 
             }
 
@@ -271,7 +266,6 @@ import javax.swing.JList;
                 memory = currentValue;
                 textField.setText("");
                 memoryField.setText(String.valueOf(memory)); //set text
-                memoryListModel.addElement(memory);
 
             }
 
