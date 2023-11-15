@@ -13,6 +13,8 @@ import javax.swing.JList;
         JFrame frame;
         JTextField textField;
 
+        JTextField memoryField;
+
         JButton[] numberButtons = new JButton[10];
         JButton[] functionButtons = new JButton[9];
 
@@ -98,11 +100,15 @@ import javax.swing.JList;
             memoryPanel.setBounds(50, 120, 300, 30);
             memoryPanel.setLayout(new GridLayout(1, 4, 0, 0));
 
+            memoryField = new JTextField();
+            memoryField.setEditable(false);
+
             memoryPanel.add(memoryButtons[0]);
             memoryPanel.add(memoryButtons[1]);
             memoryPanel.add(memoryButtons[2]);
             memoryPanel.add(memoryButtons[3]);
-            memoryPanel.add(memoryList);
+            memoryPanel.add(memoryField);
+            //memoryPanel.add(memoryList);
 
 
 
@@ -238,6 +244,7 @@ import javax.swing.JList;
             }
             if (e.getSource() == memoryClear) {
                 textField.setText("");
+                memoryField.setText("");
                 memoryListModel.clear();
 
             }
@@ -246,6 +253,7 @@ import javax.swing.JList;
                 double currentValue = Double.parseDouble(textField.getText());
                 memory += currentValue;
                 textField.setText("");
+                memoryField.setText(String.valueOf(memory)); //set text
                 memoryListModel.addElement(memory);
 
             }
@@ -253,6 +261,7 @@ import javax.swing.JList;
                 double currentValue = Double.parseDouble(textField.getText());
                 memory -= currentValue;
                 textField.setText("");
+                memoryField.setText(String.valueOf(memory)); //set text
                 memoryListModel.addElement(memory);
 
             }
@@ -261,6 +270,7 @@ import javax.swing.JList;
                 double currentValue = Double.parseDouble(textField.getText());
                 memory = currentValue;
                 textField.setText("");
+                memoryField.setText(String.valueOf(memory)); //set text
                 memoryListModel.addElement(memory);
 
             }
